@@ -80,7 +80,7 @@ public class LoginOrRegisterActivity extends AppCompatActivity {
                 emailadd=email.getText().toString().trim();
                 passwordtext=password.getText().toString().trim();
 
-//              
+//
 
                 mAPIService.login(emailadd,passwordtext).enqueue(new Callback<Token>() {
                     @Override

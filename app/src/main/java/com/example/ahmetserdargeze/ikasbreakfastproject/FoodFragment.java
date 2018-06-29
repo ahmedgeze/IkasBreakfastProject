@@ -101,7 +101,7 @@ public class FoodFragment  extends Fragment {
 
 
                 rv = (RecyclerView) view.findViewById(R.id.my_recycler_view);
-                mLayoutManager=new GridLayoutManager(getActivity().getApplicationContext(),3);
+                mLayoutManager=new GridLayoutManager(getContext(),3);
 
                 rv.setLayoutManager(mLayoutManager);
                 rv.setHasFixedSize(true);
@@ -116,7 +116,7 @@ public class FoodFragment  extends Fragment {
 
 
                 rv_price=(RecyclerView) view.findViewById(R.id.price_rv);
-                priceLayoutManager=new GridLayoutManager(getActivity().getApplicationContext(),1);
+                priceLayoutManager=new GridLayoutManager(getContext(),1);
                 rv_price.setLayoutManager(priceLayoutManager);
                 rv.setHasFixedSize(true);
                 priceAdapter=new PriceAdapter();

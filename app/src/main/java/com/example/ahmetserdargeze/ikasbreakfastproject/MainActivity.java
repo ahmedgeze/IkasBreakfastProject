@@ -73,6 +73,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         token=getIntent().getStringExtra("token");
         fl=(FrameLayout) findViewById(R.id.main_fl);
 
+        Bundle bundle=new Bundle();
+        bundle.putString("token", token);
+        FoodFragment foodFragment=new FoodFragment();
+        foodFragment.setArguments(bundle);
+        FragmentManager manager=getFragmentManager();
+        FragmentTransaction transaction=manager.beginTransaction();
+        transaction.add(R.id.main_fl,foodFragment,"food");
+        transaction.addToBackStack(null);
+        transaction.commit();
+
+
     }
 
     @Override
