@@ -18,7 +18,6 @@ import android.widget.TextView;
 
 import com.example.ahmetserdargeze.ikasbreakfastproject.FoodFragment;
 import com.example.ahmetserdargeze.ikasbreakfastproject.R;
-import com.example.ahmetserdargeze.ikasbreakfastproject.RecyclerViewClickListener;
 import com.example.ahmetserdargeze.ikasbreakfastproject.model.menu.Cart;
 import com.example.ahmetserdargeze.ikasbreakfastproject.model.menu.Menu;
 
@@ -43,7 +42,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>  {
 
     public   List<Menu> mDataset;
     public static Context context;
-    private static RecyclerViewClickListener itemListener;
+
 
     public static int x;
 

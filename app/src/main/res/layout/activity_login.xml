@@ -11,32 +11,28 @@
     <EditText
         android:id="@+id/email_etv"
         android:hint="email"
+        android:layout_margin="40dp"
         android:textColorHint="@color/colorAccent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        />
 
     <EditText
         android:id="@+id/password_etv"
         android:hint="password"
+        android:layout_margin="40dp"
         android:textColorHint="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/login_bt"
+        android:layout_margin="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LOGIN"/>
 
-    <Button
-        android:id="@+id/getMenu_bt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="MENU"/>
 
-    <TextView
-        android:id="@+id/result_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="RESULT"/>
+
+
 </LinearLayout>

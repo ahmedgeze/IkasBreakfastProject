@@ -38,12 +38,10 @@ public class LoginOrRegisterActivity extends AppCompatActivity {
 
     EditText email,password;
     Button login,menu;
-    TextView result;
+
 
     private APIService mAPIService;
-    private APIService authService;
 
-    String tokenskey="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyMywidXNlcm5hbWUiOiJhc3NpZ25tZW50QGlrYXMuY29tIiwiZXhwIjoxNTMwNTczNjc4LCJlbWFpbCI6ImFzc2lnbm1lbnRAaWthcy5jb20iLCJvcmlnX2lhdCI6MTUzMDE0MTY3OH0.JmTamDJMjJ0aazECY0vAevhkGMxam3HkBwjZrrklMzI";
 
     Database db;
 
@@ -56,9 +54,7 @@ public class LoginOrRegisterActivity extends AppCompatActivity {
         password=(EditText) findViewById(R.id.password_etv);
 
         login=(Button) findViewById(R.id.login_bt);
-        menu=(Button) findViewById(R.id.getMenu_bt);
 
-        result=(TextView) findViewById(R.id.result_tv);
 
         mAPIService= ApiUtils.getAPIService();
 
@@ -77,8 +73,10 @@ public class LoginOrRegisterActivity extends AppCompatActivity {
 
                 String emailadd,passwordtext;
 
-                emailadd=email.getText().toString().trim();
-                passwordtext=password.getText().toString().trim();
+//                emailadd=email.getText().toString().trim();
+//                passwordtext=password.getText().toString().trim();
+                emailadd="assignment@ikas.com";
+                passwordtext="user_1234*";
 
 //
 
@@ -88,7 +86,7 @@ public class LoginOrRegisterActivity extends AppCompatActivity {
                         db.openCon();
                         token=response.body();
                         user=token.getUser();
-                        result.setText(token.getToken()+"");
+
                         db.addToken(token.getToken().toString(),user.getEmail(),user.getFirstName(),user.getLastName());
 //                        db.showTokens();
                         db.getLastToken();
@@ -96,14 +94,14 @@ public class LoginOrRegisterActivity extends AppCompatActivity {
 
                         System.out.println(user.getRoles().get(0).getPermissionSets().get(0).getName());
                         RetrofitClient.token=token.getToken().toString();
-                        System.out.println("retrotoken:"+RetrofitClient.token);
-
                         Intent myIntent=new Intent(LoginOrRegisterActivity.this,MainActivity.class);
                         myIntent.putExtra("name",user.getFirstName());
                         myIntent.putExtra("surname",user.getLastName());
                         myIntent.putExtra("email",user.getEmail());
                         myIntent.putExtra("token",token.getToken());
                         LoginOrRegisterActivity.this.startActivity(myIntent);
+                        Toast.makeText(getApplicationContext(),"SUCCESFULL",Toast.LENGTH_LONG).show();
+
 
 
                     }
@@ -119,37 +117,7 @@ public class LoginOrRegisterActivity extends AppCompatActivity {
         });
 
 
-        menuList=new ArrayList<>();
-        variations=new ArrayList<>();
 
 
-
-//        menu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                mAPIService=ApiUtils.getAPIServicewithAuth();
-//                mAPIService.getMenu().enqueue(new Callback<List<com.example.ahmetserdargeze.ikasbreakfastproject.model.menu.Menu>>() {
-//                    @Override
-//                    public void onResponse(Call<List<com.example.ahmetserdargeze.ikasbreakfastproject.model.menu.Menu>> call, Response<List<com.example.ahmetserdargeze.ikasbreakfastproject.model.menu.Menu>> response) {
-//                        for(int i=0;i<response.body().size();i++){
-//                            System.out.println(response.body().get(i).getName());
-//                           Toast.makeText(getApplicationContext(),"sadasd",Toast.LENGTH_LONG).show();
-//
-//                    }
-//
-//
-//                    }
-//
-//                    @Override
-//                    public void onFailure(Call<List<com.example.ahmetserdargeze.ikasbreakfastproject.model.menu.Menu>> call, Throwable t) {
-//                        Toast.makeText(getApplicationContext(),t.getCause().toString(),Toast.LENGTH_LONG).show();
-//                        System.out.println(t.getCause().toString());
-//
-//                    }
-//                });
-//
-//
-//            }
-//        });
     }
 }
