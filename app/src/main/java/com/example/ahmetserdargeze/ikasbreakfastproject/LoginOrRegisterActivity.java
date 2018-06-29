@@ -73,10 +73,10 @@ public class LoginOrRegisterActivity extends AppCompatActivity {
 
                 String emailadd,passwordtext;
 
-//                emailadd=email.getText().toString().trim();
-//                passwordtext=password.getText().toString().trim();
-                emailadd="assignment@ikas.com";
-                passwordtext="user_1234*";
+                emailadd=email.getText().toString().trim();
+                passwordtext=password.getText().toString().trim();
+//                emailadd="assignment@ikas.com";
+//                passwordtext="user_1234*";
 
 //
 
