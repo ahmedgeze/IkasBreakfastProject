@@ -84,23 +84,30 @@ public class LoginOrRegisterActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<Token> call, Response<Token> response) {
                         db.openCon();
-                        token=response.body();
-                        user=token.getUser();
+                        if (response.isSuccessful()){
+                            token=response.body();
+                            user=token.getUser();
 
-                        db.addToken(token.getToken().toString(),user.getEmail(),user.getFirstName(),user.getLastName());
+                            db.addToken(token.getToken().toString(),user.getEmail(),user.getFirstName(),user.getLastName());
 //                        db.showTokens();
-                        db.getLastToken();
-                        db.closeCon();
+                            db.getLastToken();
+                            db.closeCon();
 
-                        System.out.println(user.getRoles().get(0).getPermissionSets().get(0).getName());
-                        RetrofitClient.token=token.getToken().toString();
-                        Intent myIntent=new Intent(LoginOrRegisterActivity.this,MainActivity.class);
-                        myIntent.putExtra("name",user.getFirstName());
-                        myIntent.putExtra("surname",user.getLastName());
-                        myIntent.putExtra("email",user.getEmail());
-                        myIntent.putExtra("token",token.getToken());
-                        LoginOrRegisterActivity.this.startActivity(myIntent);
-                        Toast.makeText(getApplicationContext(),"SUCCESFULL",Toast.LENGTH_LONG).show();
+                            System.out.println(user.getRoles().get(0).getPermissionSets().get(0).getName());
+                            RetrofitClient.token=token.getToken().toString();
+                            Intent myIntent=new Intent(LoginOrRegisterActivity.this,MainActivity.class);
+                            myIntent.putExtra("name",user.getFirstName());
+                            myIntent.putExtra("surname",user.getLastName());
+                            myIntent.putExtra("email",user.getEmail());
+                            myIntent.putExtra("token",token.getToken());
+                            LoginOrRegisterActivity.this.startActivity(myIntent);
+                            Toast.makeText(getApplicationContext(),"SUCCESFULL",Toast.LENGTH_LONG).show();
+
+                        }else {
+                            Toast.makeText(getApplicationContext(),"WRONG PASSWORD OR EMAİL",Toast.LENGTH_LONG).show();
+
+                        }
+
 
 
 
