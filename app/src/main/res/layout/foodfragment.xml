@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="8"
+        android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+            </android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_weight="5"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:paddingLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="5">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="4.0"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="Delete"
+                            android:textStyle="bold"/>
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="Quant."
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="match_parent"
+                            android:text="Name/UnitPrice"
+                            android:textStyle="bold"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent"
+                            android:text="Total"
+                            android:textStyle="bold"/>
+
+
+
+                    </LinearLayout>
+
+
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/price_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+
+                    </android.support.v7.widget.RecyclerView>
+
+                </LinearLayout>
+
+            <View style="@style/Divider"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1.4"
+                        android:orientation="horizontal"
+                        >
+                        <TextView
+                            android:id="@+id/rate_tax_tv"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="Total Tax Rate:%0"/>
+
+                        <TextView
+                            android:id="@+id/total_tax_tv"
+                            android:layout_weight="2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:textAlignment="center"
+                            android:text="Total Tax:0tl"/>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
+                        >
+                        <Button
+                            android:id="@+id/clear_cart_bt"
+                            android:background="@drawable/ic_cancel_black_24dp"
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="match_parent" />
+
+
+                        <LinearLayout
+                            android:id="@+id/payment_ll"
+                            android:background="#00ff00"
+                            android:layout_width="0dp"
+                            android:layout_weight="2"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/payment_tv"
+                                android:textColor="@android:color/white"
+                                android:paddingTop="10dp"
+                                android:layout_width="0dp"
+                                android:layout_weight="2"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:text="ÖDEME AL"/>
+
+                            <TextView
+                                android:id="@+id/total_price_tv"
+                                android:textColor="@android:color/white"
+                                android:paddingTop="10dp"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="match_parent"
+                                android:textAlignment="center"
+                                android:text="TOTAL:0TL"/>
+
+
+                        </LinearLayout>
+
+
+
+
+
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+

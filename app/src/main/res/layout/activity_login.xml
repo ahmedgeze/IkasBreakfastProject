@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.ahmetserdargeze.ikasbreakfastproject.LoginOrRegisterActivity">
+
+
+    <EditText
+        android:id="@+id/email_etv"
+        android:hint="email"
+        android:textColorHint="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/password_etv"
+        android:hint="password"
+        android:textColorHint="@color/colorAccent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/login_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"/>
+
+    <Button
+        android:id="@+id/getMenu_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MENU"/>
+
+    <TextView
+        android:id="@+id/result_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="RESULT"/>
+</LinearLayout>
